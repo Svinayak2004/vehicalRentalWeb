@@ -1,0 +1,219 @@
+.footer {
+    color: #d9d9d9;
+    background-color: #201f1f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 8vw;
+    padding-top: 50px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+    width: 100%;
+    max-width: 1200px; /* Limit the maximum width for better alignment */
+}
+
+.footer-center li a{
+    list-style: none;
+    color: #fff8f8;
+    text-decoration: none;
+}
+
+.footer-center li a:hover{
+   color: #ff8c00;
+}
+
+
+.footer-left, .footer-right, .footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ensure items align to the left */
+    gap: 20px;
+}
+
+.footer-left img.logo {
+    width: 50px; /* Adjust the size of the logo */
+    margin-bottom: 10px;
+    color: #ff8c00;
+}
+
+.footer-left .logo span {
+    color: rgb(250, 112, 26);
+ }
+
+.footer-left h1 {
+   color: white;
+   margin-right: 30px;
+}
+
+.footer-left p {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #d9d9d9;
+    transform: translate(-100px);
+}
+
+.footer-right h2, .footer-center h2 {
+    color: white;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ff8c00; /* Add a subtle underline effect */
+    padding-bottom: 5px;
+}
+
+.footer-left ul, .footer-right ul, .footer-center ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-right li, .footer-center li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #d9d9d9;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.footer-right li:hover, .footer-center li:hover {
+    color: #ff8c00; /* Add hover effect for links */
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: start; /* Align icons to the left */
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.social-icons img {
+    width: 36px; /* Slightly smaller size for balance */
+    height: 36px;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: #fff8f8; /* Add a subtle background */
+    padding: 0px; /* Ensure icons are not stretched */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Increase scaling for hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    filter: brightness(1.2); /* Make the icon brighter */
+}
+
+@media (max-width: 768px) {
+    .social-icons {
+        justify-content: center; /* Center icons on smaller screens */
+    }
+}
+
+
+hr {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #444;
+    width: 100%;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #bbb;
+    margin-top: 10px;
+}
+
+/* @media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr; 
+        text-align: center;
+        gap: 40px;
+    }
+
+    .footer-left, .footer-right, .footer-center {
+        align-items: center; 
+    }
+
+    .footer-left p {
+        text-align: center;
+    }
+} */
+
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr; /* Adjust to two columns */
+        gap: 40px;
+    }
+
+    .footer-left {
+        align-items: center; /* Center align content */
+        text-align: center;
+    }
+
+    .footer-left p {
+        transform: none; /* Remove negative transform */
+        text-align: center;
+        padding: 0 20px; /* Add some padding for better readability */
+    }
+}
+
+/* Mobile Devices (768px and below) */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack all elements */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-left, 
+    .footer-right, 
+    .footer-center {
+        align-items: center; /* Center align content */
+        text-align: center;
+    }
+
+    .footer-left h1 {
+        text-align: center;
+    }
+
+    .footer-left p {
+        text-align: center;
+        transform: none;
+        padding: 0 15px;
+    }
+
+    .social-icons {
+        justify-content: center; /* Center align social icons */
+        margin-left: 0; /* Remove left margin */
+    }
+
+    .footer-center, 
+    .footer-right {
+        width: 100%; /* Ensure full width for better spacing */
+    }
+}
+
+/* Small Phones (480px and below) */
+@media (max-width: 480px) {
+    .footer-left p {
+        font-size: 0.85rem; /* Slightly reduce text size */
+        padding: 0 10px;
+    }
+
+    .social-icons img {
+        width: 30px; /* Reduce icon size */
+        height: 30px;
+    }
+}
+
+

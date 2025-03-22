@@ -1,0 +1,63 @@
+.explore {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: rgb(235, 235, 232);
+}
+
+.explore h1 {
+    font-style: oblique;
+    margin-bottom: 20px;
+}
+
+.explore-list {
+    display: flex;
+    justify-content: center; /* Align items in the center horizontally */
+    gap: 50px; /* Reduce excessive spacing */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+.choice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 300px; /* Ensure consistent sizing */
+    gap: 10px;
+}
+
+.choice img {
+    width: 100%;
+    max-width: 300px; /* Set a maximum width for responsiveness */
+    height: auto;
+    border-radius: 15px; /* Adjust for a smoother border */
+    cursor: pointer;
+    transition: transform 0.3s, border 0.3s; /* Smooth transition for hover effects */
+}
+
+.choice img:hover {
+    transform: scale(1.05); /* Slightly larger on hover */
+    border: 3px solid rgba(255, 145, 0, 0.972); /* Highlight border on hover */
+}
+
+.choice p {
+    margin-top: 10px;
+    font-size: 1.2rem; /* Slightly smaller for better scaling */
+    font-weight: bold;
+}
+
+.explore  hr {
+    width: 100%;
+    height: 1.5px;
+    background: #b7b7b7;
+    border: none; 
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.choice .active{
+    border: 4px solid orange;
+}

@@ -1,0 +1,355 @@
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      body {
+        font-family: Arial, sans-serif;
+      }
+  
+      /* Navbar Styles */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        padding: 1rem 2rem;
+        color: white;
+        background: rgb(8, 9, 9);
+      }
+  
+      .navbar .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        transform: translateX(60px);
+      }
+      .navbar .orange-text{
+        color: rgba(255, 145, 0, 0.972);
+      }
+  
+      .navbar .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        margin-left: -250px;
+      }
+  
+      .navbar .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+      }
+  
+      .navbar .nav-links a:hover {
+        color:#f00c0c;
+      }
+
+      .navbar .right {
+        display: flex;
+        align-items: center;
+        gap: 1rem; /* Adds spacing between the cart and button */
+        transform: translate(-60px);
+      }
+      
+
+      .navbar .right .cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .navbar .right img{
+        width: 35px;
+        height: 34px;
+        object-fit: contain;
+        padding: auto;
+      }
+
+      .navbar .right img:hover{
+        transform: scale(1.1);
+      }
+
+      .cart {
+        position: relative;
+      }
+      
+      .cart-badge {
+        position: absolute;
+        top: -5px;
+        right: 1px;
+        height: 10px;
+        width: 10px;
+        background-color: red;
+        border-radius: 50%;
+        border: 2px solid white; /* Optional: Add a white border for better visibility */
+      }
+      
+
+      .navbar .right button {
+        width: 120px;
+        height: 40px;
+        padding-top: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 20px;
+        background-color:white;
+        color: rgb(10, 10, 10);
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .navbar .right button:hover {
+        background-color: #f53c0d;
+     /* Slight hover animation */
+      }
+
+      .navbar .active{
+        padding-bottom: 2px;
+        border-bottom: 2px solid red;
+      }
+
+      /* Tablets and Small Laptops (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .navbar {
+      padding: 1rem;
+  }
+
+  .navbar .logo {
+      transform: translateX(0); /* Reset logo position */
+  }
+
+  .navbar .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #222;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      padding: 1rem 0;
+  }
+
+  .navbar .nav-links.active {
+      display: flex;
+  }
+
+  .navbar .nav-links li {
+      padding: 1rem;
+  }
+
+  .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+  }
+
+  .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      transition: 0.3s;
+  }
+
+  .navbar .right {
+      transform: none;
+  }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .navbar {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0.8rem 1.2rem;
+  }
+
+  .navbar .logo {
+      font-size: 1.3rem;
+  }
+
+  .navbar .nav-links {
+      flex-direction: column;
+      width: 100%;
+      top: 60px;
+  }
+
+  .navbar .nav-links a {
+      font-size: 1rem;
+      padding: 10px;
+  }
+
+  .navbar .right {
+      flex-direction: row;
+      gap: 10px;
+  }
+
+  .navbar .right button {
+      width: 100px;
+      height: 35px;
+      font-size: 16px;
+  }
+
+  .cart-badge {
+      top: -4px;
+      right: 2px;
+      height: 8px;
+      width: 8px;
+  }
+}
+
+/* Small Phones (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .navbar {
+      padding: 0.5rem 1rem;
+  }
+
+  .navbar .logo {
+      font-size: 1.2rem;
+  }
+
+  .navbar .right img {
+      width: 28px;
+      height: 28px;
+  }
+
+  .navbar .right button {
+      width: 90px;
+      height: 30px;
+      font-size: 14px;
+  }
+
+  .navbar .nav-links a {
+      font-size: 0.95rem;
+  }
+
+  .hamburger div {
+      width: 20px;
+      height: 2.5px;
+  }
+}
+
+/* Profile Section */
+.profile-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 160px;
+  text-align: center;
+  padding: 10px;
+  z-index: 10;
+}
+
+.dropdown-menu p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.dropdown-menu button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.dropdown-menu button:hover {
+  background-color: #d32f2f;
+}
+
+/* Profile Section */
+.profile-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 160px;
+  text-align: center;
+  padding: 10px;
+  z-index: 10;
+}
+
+.dropdown-menu p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.dropdown-menu button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.dropdown-menu button:hover {
+  background-color: #d32f2f;
+}
+

@@ -1,0 +1,105 @@
+.hero {
+  height: 90vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .slider {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  animation: slide 27s infinite; /* Total duration: 9 images × 2s each */
+}
+
+/* Keyframes for sliding images */
+@keyframes slide {
+  0%, 15%   { background-image: url('./Honda_Accord.png'); } /* Show first image */
+  15%, 22%  { background-image: url('./Honda_City.png'); } /* Show second image */
+  22%, 33%  { background-image: url('./Hyundai_i20.png'); } /* Show third image */
+  33%, 44%  { background-image: url('./Mercedes_E_class.png'); } /* Show fourth image */
+  44%, 55%  { background-image: url('./Mahindra_XUV700.png'); } /* Show fifth image */
+  55%, 77%  { background-image: url('./Porsche_Macan.png'); } /* Show seventh image */
+  77%, 88%  { background-image: url('./Skoda_Kylaq.png'); } /* Show eighth image */
+  88%, 100% { background-image: url('./Voklswagen_Virtus_GT.png'); } /* Show ninth image */
+}
+
+/* Overlay */
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9));
+  z-index: 1;
+}
+
+/* Content */
+.hero .content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  animation: fadeIn 2s ease-out;
+}
+
+.hero .content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero .content p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #d7d7d7;
+  margin-bottom: 2rem;
+  text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero .buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.hero .buttons .explore-btn1 {
+  width: 200px;
+  background: #ff8c00;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero .buttons .explore-btn1:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 140, 0, 0.6);
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(10%);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

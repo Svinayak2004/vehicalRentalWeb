@@ -1,0 +1,196 @@
+.benefits {
+    padding: 50px 20px;
+    /* background: linear-gradient(to bottom, #ffffff, #f4f4f9); */
+    background-color: rgb(235, 235, 232);
+    color: #333;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .benefits .container {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 100px;
+  }
+  
+  .benefits h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ff8c00;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .benefits .points {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .benefits .point {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .benefits .point:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .benefits .point img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    object-fit: cover; /* Ensures the image scales properly */
+    border: 1px solid #ff8c00;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    padding: 10px;
+  }
+  
+  .benefits .point img:hover {
+    transform: scale(1.1);
+    border-color: #e76f51;
+  }
+  
+  .benefits .point p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  .benefits .point p:first-child {
+    font-weight: 600;
+    font-size: 1.4rem; /* Slightly larger text */
+    color: #ff4500; /* Eye-catching color */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .benefits .point p:last-child {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  /* @media (max-width: 768px) {
+    .benefits .points {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .benefits .point {
+      max-width: 100%;
+    }
+  }
+   */
+
+  /* Medium Devices (Tablets, 1024px and below) */
+@media (max-width: 1024px) {
+  .benefits .container {
+      width: 90%;
+      padding: 40px;
+  }
+
+  .benefits h1 {
+      font-size: 2rem;
+  }
+
+  .benefits .points {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+  }
+
+  .benefits .point {
+      max-width: 100%;
+      padding: 15px;
+  }
+}
+
+/* Small Devices (Phones, 768px and below) */
+@media (max-width: 768px) {
+  .benefits .container {
+      width: 95%;
+      padding: 30px;
+  }
+
+  .benefits h1 {
+      font-size: 1.8rem;
+  }
+
+  .benefits .points {
+      grid-template-columns: 1fr;
+      gap: 15px;
+  }
+
+  .benefits .point {
+      padding: 15px;
+  }
+
+  .benefits .point img {
+      width: 80px;
+      height: 80px;
+  }
+
+  .benefits .point p:first-child {
+      font-size: 1.2rem;
+  }
+
+  .benefits .point p:last-child {
+      font-size: 0.9rem;
+  }
+}
+
+/* Extra Small Devices (Phones below 480px) */
+@media (max-width: 480px) {
+  .benefits .container {
+      padding: 20px;
+  }
+
+  .benefits h1 {
+      font-size: 1.5rem;
+  }
+
+  .benefits .points {
+      gap: 10px;
+  }
+
+  .benefits .point {
+      padding: 10px;
+  }
+
+  .benefits .point img {
+      width: 70px;
+      height: 70px;
+  }
+
+  .benefits .point p:first-child {
+      font-size: 1rem;
+  }
+
+  .benefits .point p:last-child {
+      font-size: 0.85rem;
+  }
+}
+
+
+  .benefits .point .special-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff8c00;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.benefits .point .special-img:hover {
+    transform: scale(1.1);
+    border-color: #e76f51;
+}

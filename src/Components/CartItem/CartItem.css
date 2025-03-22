@@ -1,0 +1,227 @@
+/* CartItem.css */
+
+.cart-items {
+  height: 60vh;
+  width: 100%;
+  padding: 20px;
+  width: 900px;
+  margin: 70px auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(199, 199, 199);
+  
+}
+
+.cart-items h1 {
+  text-align: center;
+  color: #555;  
+  font-size: 5.5rem;
+  margin-top: 100px;
+}
+
+.cart-format {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  background-color: #eee;
+  font-weight: bold;
+  color: #000000;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.items-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: white;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.items-main img.product-icon {
+  width: 90px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10%;
+  margin-left: 43px;
+}
+
+.items-main .name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-left: 30px;
+}
+
+.items-main .price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #27ae60;
+  text-align: center;
+  margin-left: 0px;
+}
+
+.items-main .qty{
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+  margin-left: 0px;
+}
+
+.items-main img.remove_icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  filter: invert(50%);
+  transition: transform 0.2s, filter 0.2s;
+  margin-left: 58px;
+}
+
+.items-main img.remove_icon:hover {
+  transform: scale(1.2);
+  filter: invert(20%);
+}
+
+.items-main button {
+  width: 100px;
+  padding: 8px 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-left: 30px;
+}
+
+.items-main button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin: 10px 0;
+}
+
+/* Tablets (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  .cart-items {
+    width: 90%;
+    margin: 50px auto;
+    height: auto;
+    padding: 15px;
+  }
+
+  .cart-format, .items-main {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Remove "Book" column */
+  }
+
+  .items-main img.product-icon {
+    width: 70px;
+    height: 55px;
+    margin-left: 10px;
+  }
+
+  .items-main .name,
+  .items-main .price,
+  .items-main .qty {
+    font-size: 0.9rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .items-main img.remove_icon {
+    margin-left: 0;
+  }
+
+  .items-main button {
+    display: none; /* Hide "Rent Now" button on tablets */
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .cart-items {
+    width: 95%;
+    padding: 10px;
+    margin: 40px auto;
+  }
+
+  .cart-format {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .items-main {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 8px;
+  }
+
+  .items-main img.product-icon {
+    width: 60px;
+    height: 50px;
+  }
+
+  .items-main .name,
+  .items-main .price,
+  .items-main .qty {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .items-main img.remove_icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .cart-items {
+    width: 100%;
+    padding: 5px;
+    margin: 30px auto;
+  }
+
+  .cart-format {
+    grid-template-columns: 1fr 1fr;
+    font-size: 0.8rem;
+  }
+
+  .items-main {
+    grid-template-columns: 1fr 1fr;
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+
+  .items-main img.product-icon {
+    width: 50px;
+    height: 40px;
+  }
+
+  .items-main .name,
+  .items-main .price,
+  .items-main .qty {
+    font-size: 0.7rem;
+  }
+
+  .items-main img.remove_icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cart-items h1 {
+    font-size: 2rem;
+  }
+}
