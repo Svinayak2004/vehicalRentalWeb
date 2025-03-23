@@ -1,28 +1,22 @@
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
-    try {
-        const conn = await mongoose.connect(process.env.MONGO_URI, {
-            dbName: process.env.DB_NAME || undefined, // Use DB_NAME only if provided separately
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
+      dbName: process.env.DB_NAME || "car_rental", // Default to "car_rental" if DB_NAME is not set
+    });
 
-        console.log(`MongoDB Connected: ${conn.connection.host}`);
-        console.log(`Connected to Database: ${conn.connection.name}`);
-    } catch (err) {
-        console.error("MongoDB Connection Error:", err);
-        process.exit(1); // Exit the process if the connection fails
-    }
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    console.log(`Connected to Database: ${conn.connection.name}`);
+  } catch (error) {
+    console.error("MongoDB Connection Error:", error.message);
+    process.exit(1); // Exit process with failure
+  }
 };
 
 // Event listeners for better error handling
-mongoose.connection.on("error", (err) => {
-    console.error("MongoDB Error:", err);
-});
-
 mongoose.connection.on("disconnected", () => {
-    console.warn("MongoDB Disconnected. Attempting to reconnect...");
+  console.warn("MongoDB Disconnected. Attempting to reconnect...");
 });
 
 module.exports = connectDB;

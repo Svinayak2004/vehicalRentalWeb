@@ -88,32 +88,44 @@ const CarView = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
     const bookingData = {
-      ...formData,
-      pickUpDate: new Date(formData.pickUpDate), // Convert to Date object
-      dropDate: new Date(formData.dropDate), // Convert to Date object
+      name: formData.name,
+      adharNumber: formData.adharNumber,
+      contact: formData.contact,
+      pickUpDate: new Date(formData.pickUpDate).toISOString(), // Ensure correct format
+      dropDate: new Date(formData.dropDate).toISOString(), // Ensure correct format
+      withDriver: formData.withDriver,
+      driverDays: formData.withDriver ? formData.driverDays : 0, // Prevent invalid values
       totalAmount,
-      carId: item._id // Ensure `item._id` is the actual MongoDB ObjectId
+      carId: item.id, // Ensure carId is correctly assigned
     };
   
     try {
-      const response = await fetch("http://localhost:5000/api/bookings", {
+      const response = await fetch("http://localhost:5000/api/bookings/create", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(bookingData),
       });
+  
+      const responseData = await response.json(); // Read response
   
       if (response.ok) {
         alert("Booking confirmed!");
       } else {
-        alert("Failed to book. Try again.");
+        console.error("Booking error:", responseData); // Log server response
+        alert(`Failed to book. Error: ${responseData.message || "Try again."}`);
       }
     } catch (error) {
-      console.error(error);
-      alert("Error submitting booking.");
+      console.error("Network error:", error);
+      alert("Error submitting booking. Check your connection.");
     }
   };
   
+  
+
   return (
     <div className={`car-view ${showForm ? "expanded" : ""}`}>
       <div className="car-container">
